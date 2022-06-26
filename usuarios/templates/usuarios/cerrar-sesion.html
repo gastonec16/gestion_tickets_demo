@@ -1,0 +1,9 @@
+{% extends "bandeja/base.html" %}
+{% block content %}
+    <h2>Se ha cerrado sesión</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'iniciar-sesion' %}">Iniciar Sesión Nuevamente</a>
+        </small>
+    </div>
+{% endblock content %}

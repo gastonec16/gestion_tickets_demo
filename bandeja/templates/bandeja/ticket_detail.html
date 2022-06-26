@@ -1,0 +1,44 @@
+{% extends "bandeja/base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ object.autor.perfil.imagen.url }}" alt="">
+        <div class="media-body">
+            <div class="article-metadata mr-auto">
+                <div class="row">
+                    <div class="col-sm">
+                        <a class="mr-2" href="#">{{ object.autor.first_name }} {{ object.autor.last_name }}</a>
+                    </div>
+                    <div class="col-sm">
+                        <small>Estado: En espera</small>
+                    </div>
+                    <div class="col-sm">
+                        <small class="text-muted">{{ object.fecha }}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="article-metadata mr-auto">
+                <h3>{{ object.titulo }}</h3>
+                <p class="article-content">{{ object.descripcion }}</p>
+            </div>
+            <div class="mr-auto">
+                <div class="row">
+                    <div class="col-sm">
+                        <small>PC: <a href="#">(ID)</a></small>
+                    </div>
+                    <div class="col-sm">
+                        <small>Componente: <a href="#">(ID)</a></small>
+                    </div>
+                    <div class="col-sm">
+                        <small>Área: <a href="#">(ID)</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="media content-section">
+        <p class="article-content text-muted">Escribir respuesta...</p>
+    </article>
+    <button class="btn btn-outline-info" type="submit">Enviar Respuesta</button>
+
+
+{% endblock content %}
