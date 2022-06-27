@@ -1,0 +1,1 @@
+web: gunicorn gestion_tickets_demo.wsgi
