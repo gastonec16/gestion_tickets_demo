@@ -8,9 +8,9 @@ class Ticket(models.Model):
     descripcion = models.TextField(max_length=5000)
     fecha = models.DateTimeField(default=timezone.now)
     autor = models.ForeignKey(User, on_delete=models.RESTRICT)
-    # area
-    # pc
-    # componente
+    area = models.CharField(max_length=100, blank=True, null=True)
+    pc = models.CharField(max_length=100, blank=True, null=True)
+    componente = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.titulo

@@ -27,7 +27,7 @@ class DetailViewTicket(DetailView):
 
 class CreateViewTicket(LoginRequiredMixin, CreateView):
     model = Ticket
-    fields = ['titulo', 'descripcion']
+    fields = ['titulo', 'descripcion', 'area', 'pc', 'componente']
 
     def form_valid(self, form):
         form.instance.autor = self.request.user
