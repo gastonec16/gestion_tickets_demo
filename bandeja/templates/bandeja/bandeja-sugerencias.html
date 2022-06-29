@@ -1,0 +1,23 @@
+{% extends "bandeja/base.html" %}
+{% block content %}
+    {% if user.is_superuser %}
+        {% for sugerencia in sugerencias %}
+            <article class="media content-section">
+                <img class="rounded-circle article-img" src="{{ sugerencia.autor.perfil.imagen.url }}" alt="">
+                <div class="media-body">
+                    <div class="article-metadata mr-auto">
+                        <div class="row">
+                            <div class="col-sm">
+                                <a class="mr-2" href="#">{{ sugerencia.autor.first_name }} {{ sugerencia.autor.last_name }}</a>
+                            </div>
+                            <div class="col-sm">
+                                <small class="text-muted">{{ sugerencia.fecha }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="article-content">{{ sugerencia.mensaje }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

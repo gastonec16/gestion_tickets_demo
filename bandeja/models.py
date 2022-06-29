@@ -17,3 +17,14 @@ class Ticket(models.Model):
 
     def get_absolute_url(self):
         return reverse('ticket-detail', kwargs={'pk': self.pk})
+
+class Sugerencia(models.Model):
+    mensaje = models.TextField()
+    fecha = models.DateTimeField(default=timezone.now)
+    autor = models.ForeignKey(User, on_delete=models.RESTRICT)
+
+    def __str__(self):
+        return f'{self.autor.first_name} {self.autor.last_name}'
+
+    def get_absolute_url(self):
+        return reverse('bandeja-inicio')
