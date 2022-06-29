@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 class Ticket(models.Model):
-    titulo = models.CharField(max_length=100)
-    descripcion = models.TextField(max_length=5000)
+    titulo = models.CharField('Título', max_length=100)
+    descripcion = models.TextField('Descripción', max_length=5000)
     fecha = models.DateTimeField(default=timezone.now)
     autor = models.ForeignKey(User, on_delete=models.RESTRICT)
-    area = models.CharField(max_length=100, blank=True, null=True)
-    pc = models.CharField(max_length=100, blank=True, null=True)
+    area = models.CharField('Área', max_length=100, blank=True, null=True)
+    pc = models.CharField('PC', max_length=100, blank=True, null=True)
     componente = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
