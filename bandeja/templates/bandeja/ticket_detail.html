@@ -1,5 +1,6 @@
 {% extends "bandeja/base.html" %}
 {% block content %}
+    <h5>Ticket #{{ object.id }}</h5>
     <article class="media content-section">
         <img class="rounded-circle article-img" src="{{ object.autor.perfil.imagen.url }}" alt="">
         <div class="media-body">

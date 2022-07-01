@@ -22,12 +22,13 @@
                     <p class="article-content">{{ ticket.descripcion }}</p>
                     <div class="row">
                         <div class="col-sm"></div>
-                        <div class="col-sm"></div>
+                        <div class="col-sm">
+                            <small class="text-muted">Ticket #{{ ticket.id }}</small>
+                        </div>
                         <div class="col-sm">
                             <small class="text-muted">Respuestas: 0</small>
                         </div>
                     </div>
-
                 </div>
             </article>
         {% endfor %}
